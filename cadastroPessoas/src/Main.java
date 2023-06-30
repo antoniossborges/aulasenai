@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
         List<Person> studants = new ArrayList<Person>();
         boolean exit = true;
         while (exit){
@@ -28,7 +27,7 @@ public class Main {
                     break;
                 case 2 :
                     System.out.println("Qual o nome que deseja buscar?");
-                    String nameToFind = scanner.nextLine();
+                    String nameToFind = scanner.next();
                     findStudant(studants, nameToFind);
                     break;
                 case 3 :
@@ -43,7 +42,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite o nome completo do estudante");
-        studant.name = scanner.nextLine();
+        studant.name = scanner.next();
         studants.add(studant);
         System.out.println("Obrigado por digitar o nome completo do " + studant.name);
     }
@@ -52,7 +51,7 @@ public class Main {
 
         for(int count = 0; count < studants.size(); count++){
             Person student = studants.get(count);
-            if(student.equals(studantName)){
+            if(student.name.equals(studantName)){
                 System.out.println("Encontrei o " + studantName);
             }
         }
